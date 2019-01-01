@@ -126,6 +126,7 @@ def segmentation(region, numbers):
 		return result_alphabet + result_num, seg_line
 
 	else: # numbers == 21
+		have_alphabet = 0
 		for p in range(0,j+1):	
 			if p != j:
 				tmp = (int)((seg[p][1]+seg[p+1][0])/2)
@@ -139,7 +140,6 @@ def segmentation(region, numbers):
 			final = cv2.cvtColor(final, cv2.COLOR_BGR2GRAY)
 			final = final.ravel()
 			final = final[np.newaxis,:]
-			have_alphabet = 0
 			if p == 0:
 				result = final
 			elif p != 14:
